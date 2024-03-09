@@ -1,0 +1,53 @@
+<body>
+  <!-- TITLE -->
+  <div class="box">
+    <h2>QUẢN LÝ LỊCH BAY</h2>
+    <form asp-action="Index" method="get">
+      <input
+        type="text"
+        placeholder="Tìm kiếm lịch bay"
+        class="searchBox form-control"
+        name="searchTerm"
+      />
+    </form>
+    <button
+      class="btnCreate btn btn-dark"
+      (click)="popUpCreateFlight('300ms', '300ms')"
+    >
+      Thêm lịch bay mới
+    </button>
+  </div>
+  <div class="box mt-3">
+    <div style="position: relative">
+      <h3 class="text-center">Danh Sách Lịch Bay</h3>
+    </div>
+    <div class="box mt-3" id="listBox">
+      <div class="fixTableHead">
+        <table
+          class="table table-striped table-hover table-bordered text-center"
+        >
+          <thead>
+            <tr>
+              <th>Mã Lịch Bay</th>
+              <th>Mã Chuyến Bay</th>
+              <th>Ngày Bay</th>
+              <th>Tổng Ghế</th>
+              <th>Đơn Giá</th>
+              <th>Mã Máy Bay</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list">
+              <td>{{ item.MALICHBAY }}</td>
+              <td>{{ item.MACB }}</td>
+              <td>{{ item.NGAYBAY | date : "dd/MM/yyyy" }}</td>
+              <td>{{ item.TONGSOGHE }}</td>
+              <td>{{ item.DONGIA | currency : "VND" : "" }} VND</td>
+              <td>{{ item.MAMB }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>

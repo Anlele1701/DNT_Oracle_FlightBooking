@@ -1,0 +1,72 @@
+<div>
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <!-- Logo -->
+      <a routerLink="/admin/dashboard" style="margin-left: -30px">
+        <img src="assets/admin/logo.png" style="height: 85px" />
+        <span class="imgTitle">HỆ THỐNG QUẢN LÝ</span>
+      </a>
+      <hr style="color: white" />
+      <!-- Sidebar menu -->
+      <div class="main">
+        <ul class="menu pt-3">
+          <li
+            class="nav-link mb-3"
+            [ngClass]="{ selectedItem: activeindex === 0 }"
+            (click)="onClickSideBar(0)"
+          >
+            <a routerLink="/admin/dashboard" (click)="onClickSideBar(0)">
+              <span class="icon"> <i class="fa-solid fa-house"></i></span>
+              <span class="cateName">Lịch Bay</span>
+            </a>
+          </li>
+          <!-- customer -->
+          <li
+            class="nav-link mb-3"
+            [ngClass]="{ selectedItem: activeindex === 1 }"
+            (click)="onClickSideBar(1)"
+          >
+            <a routerLink="/admin/customer">
+              <span class="icon"><i class="fa-solid fa-user"></i> </span>
+              <span class="cateName">Khách Hàng</span>
+            </a>
+          </li>
+
+          <!-- ORDERS -->
+          <li
+            class="nav-link mb-3"
+            [ngClass]="{ selectedItem: activeindex === 3 }"
+            (click)="onClickSideBar(3)"
+          >
+            <a routerLink="/admin/orders">
+              <span class="icon"><i class="fa-solid fa-receipt"></i> </span>
+              <span class="cateName">Hóa Đơn</span>
+            </a>
+          </li>
+          <!-- ORDERS -->
+        </ul>
+      </div>
+    </div>
+    <!-- CONTENT -->
+    <!-- ADMINBOX -->
+    <div class="container-fluid p-0" style="height: 100vh; background: #eeedec">
+      <div class="adminbox">
+        <div class="d-flex flex-row">
+          <div class="logo ms-5">
+            <img id="avataradmin" src="assets/admin/avatar.jpg" />
+          </div>
+          <div class="col ps-3">
+            <div class="fw-bold text-uppercase">Nhóm 7</div>
+            <div class="fw-light">ADMIN</div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      <!--  -->
+    </div>
+  </body>
+</div>
