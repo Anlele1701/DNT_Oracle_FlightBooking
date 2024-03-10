@@ -12,7 +12,8 @@
         type="text"
         class="form-control"
         id="exampleInputPassword1"
-        name="user.hoTen"
+        [(ngModel)]="list.MACB"
+        name="list.MACB"
       />
     </div>
     <div class="mb-3 px-5">
@@ -22,7 +23,8 @@
         placeholder="name@example.com"
         class="form-control"
         id="exampleInputPassword1"
-        name="user.email"
+        [(ngModel)]="list.NGAYBAY"
+        name="list.NGAYBAY"
       />
     </div>
     <div class="mb-3 px-5">
@@ -31,7 +33,8 @@
         type="number"
         class="form-control"
         id="exampleInputPassword1"
-        name="user.sdt"
+        [(ngModel)]="list.SOLUONGGHE"
+        name="list.SOLUONGGHE"
       />
     </div>
     <div class="mb-3 px-5">
@@ -40,7 +43,8 @@
         type="number"
         class="form-control"
         id="exampleInputPassword1"
-        name="user.matKhau"
+        [(ngModel)]="list.DONGIA"
+        name="list.DONGIA"
       />
     </div>
 
@@ -52,10 +56,16 @@
         type="text"
         class="form-control"
         id="exampleInputPassword1"
-        name="user.matKhau"
+        [(ngModel)]="list.SOHIEUMAYBAY"
+        name="list.SOHIEUMAYBAY"
       />
     </div>
-    <button type="button" class="btn btn-success my-2 mx-5" mat-dialog-close>
+    <button
+      type="button"
+      class="btn btn-success my-2 mx-5"
+      (click)="createFlightList()"
+      mat-dialog-close
+    >
       Tạo
     </button>
   </form>

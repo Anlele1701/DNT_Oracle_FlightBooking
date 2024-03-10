@@ -21,7 +21,7 @@ export class FlightListComponent implements OnInit {
   }
   getFlightList() {
     this.http.get(this.api.getAPI() + '/showLichBay').subscribe((data) => {
-      this.list = data;
+      this.list = data;   
     });
   }
   popUpCreateFlight(
@@ -34,7 +34,6 @@ export class FlightListComponent implements OnInit {
     });
     popup.afterClosed().subscribe((result) => {
       this.getFlightList();
-
     });
   }
 }

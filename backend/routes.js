@@ -46,7 +46,7 @@ router.use( (request, response, next) => {
 router.route("/showLichBay").get(async (req, res) => {
   const connection = await connectDB();
   await connection.execute(
-    "SELECT * FROM LICHBAY ORDER BY NGAYBAY",
+    "SELECT * FROM LICHBAY ORDER BY MALICHBAY ASC",
     {},
     { outFormat: oracledb.OBJECT },
      (err, result) =>{
@@ -76,7 +76,7 @@ router.route("/addLichBay").post(async (req, res) => {
   var body = req.body;
   console.log(body);
   await connection.execute(
-    "EXECUTE THEM_LICHBAY(:NGAYBAY,:MACB, 1, :SOLUONGGHE, :DONGIA, :SOHIEUMAYBAY)",
+    "BEGIN THEM_LICH_BAY(TO_DATE(:NGAYBAY,'YYYY-MM-DD'),:MACB, 1, :SOLUONGGHE, :DONGIA, :SOHIEUMAYBAY); END;",
     [
       body.NGAYBAY,
       body.MACB,

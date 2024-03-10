@@ -4,7 +4,7 @@ import { LayoutComponent } from './Admin/layout/layout.component';
 import { FlightListComponent } from './Admin/flight-list/flight-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/Admin/FlightList', pathMatch: 'full' },
+  { path: '', redirectTo: '/admin/FlightList', pathMatch: 'full' },
   //ADMIN
   {path:'admin',
   component: LayoutComponent,
